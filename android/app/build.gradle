@@ -1,0 +1,40 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+    id "dev.flutter.flutter-gradle-plugin"
+}
+
+android {
+    namespace "com.example.auratrace" // Use your actual package name
+    compileSdkVersion flutter.compileSdkVersion // Use Flutter-defined compileSdkVersion
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        // Specify your unique Application ID
+        applicationId "com.example.auratrace"
+        minSdkVersion flutter.minSdkVersion // Use Flutter-defined minSdkVersion
+        targetSdkVersion flutter.targetSdkVersion // Use Flutter-defined targetSdkVersion
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            // Using debug signing keys for now (update this for production)
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.." // Source path for Flutter
+}
